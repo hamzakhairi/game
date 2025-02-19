@@ -6,7 +6,7 @@
 /*   By: hkhairi <hkhairi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 16:47:58 by hkhairi           #+#    #+#             */
-/*   Updated: 2025/02/18 19:41:49 by hkhairi          ###   ########.fr       */
+/*   Updated: 2025/02/19 10:56:11 by hkhairi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,6 @@ static void	init_enemies(t_game *game, int enemy_count)
 		main_make_change(game, i, j, &index);
 		i++;
 	}
-	free_enemy(game);
 }
 
 void	find_enemy_positions(t_game *game)

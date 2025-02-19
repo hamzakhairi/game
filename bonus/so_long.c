@@ -6,7 +6,7 @@
 /*   By: hkhairi <hkhairi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 16:28:44 by hkhairi           #+#    #+#             */
-/*   Updated: 2025/02/18 18:13:41 by hkhairi          ###   ########.fr       */
+/*   Updated: 2025/02/19 10:54:40 by hkhairi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ void	bigen_game(t_game *game, char *str)
 	init_game(game, str);
 	render_map(game);
 	mlx_key_hook(game->win, handle_keypress, game);
+    find_enemy_positions(game);
 	mlx_loop_hook(game->mlx, game_loop, game);
 	mlx_hook(game->win, 17, 0, ft_close, game);
 	mlx_loop(game->mlx);

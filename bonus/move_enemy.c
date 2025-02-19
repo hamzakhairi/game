@@ -6,7 +6,7 @@
 /*   By: hkhairi <hkhairi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 13:22:09 by hkhairi           #+#    #+#             */
-/*   Updated: 2025/02/18 18:38:22 by hkhairi          ###   ########.fr       */
+/*   Updated: 2025/02/19 10:56:20 by hkhairi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,8 +90,6 @@ void	move_enemies(t_game *game)
 
 int	game_loop(t_game *game)
 {
-	if (!game->arr_enemy)
-		find_enemy_positions(game);
 	move_enemies(game);
 	return (0);
 }
