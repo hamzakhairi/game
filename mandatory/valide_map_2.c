@@ -6,7 +6,7 @@
 /*   By: hkhairi <hkhairi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 19:07:09 by hkhairi           #+#    #+#             */
-/*   Updated: 2025/02/18 17:56:41 by hkhairi          ###   ########.fr       */
+/*   Updated: 2025/02/19 16:22:59 by hkhairi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@ void	check_width_and_height(t_game *game, t_map	size_map)
 	height = size_map.i;
 	if ((width * 32 > 3200) || (width * 32 == 0))
 	{
-		print_error("Error : map is so long\n");
+		print_error("Erorr\nmap is so long\n");
 		free_game(game);
 		exit(1);
 	}
 	if ((height * 32 > 1720) || (height * 32 == 0))
 	{
-		print_error("Error : map is so long\n");
+		print_error("Erorr\nmap is so long\n");
 		free_game(game);
 		exit(1);
 	}
@@ -73,7 +73,7 @@ void	validate_component_map(t_game	*game)
 	sume = (t_valid *)malloc(sizeof(t_valid));
 	if (!sume)
 	{
-		print_error("Memory allocation failed!\n");
+		print_error("Erorr\nMemory allocation failed!\n");
 		free_game(game);
 		exit(1);
 	}
@@ -84,9 +84,9 @@ void	validate_component_map(t_game	*game)
 	sume->collectibl = 0;
 	get_number(sume, game->map);
 	if (sume->wall < 1 || sume->player != 1 || sume->collectibl < 1
-		|| sume->exit != 1 || sume->space < 1)
+		|| sume->exit != 1)
 	{
-		print_error("Error: Invalid component in map!\n");
+		print_error("Erorr\nInvalid component in map!\n");
 		free(sume);
 		free_game(game);
 		exit(1);

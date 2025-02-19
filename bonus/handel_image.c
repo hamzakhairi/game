@@ -6,7 +6,7 @@
 /*   By: hkhairi <hkhairi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 10:49:01 by hkhairi           #+#    #+#             */
-/*   Updated: 2025/02/17 15:06:20 by hkhairi          ###   ########.fr       */
+/*   Updated: 2025/02/19 16:18:01 by hkhairi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	handel_image_player(t_game *game, int dx, int dy)
 	return_imag(game, dx, dy);
 	if (!game->img_player)
 	{
-		print_error("Error: Failed to load one or more XPM images\n");
+		print_error("Error\nFailed to load one or more XPM images\n");
 		free_images(game);
 		exit(1);
 	}

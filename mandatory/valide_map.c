@@ -6,7 +6,7 @@
 /*   By: hkhairi <hkhairi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 13:46:13 by hkhairi           #+#    #+#             */
-/*   Updated: 2025/02/18 17:33:04 by hkhairi          ###   ########.fr       */
+/*   Updated: 2025/02/19 14:24:32 by hkhairi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	valid_first_wall_and_last_wall(t_game *game, int i, int j)
 	{
 		if (map[i][j] != '1')
 		{
-			print_error("Error : Invalid wall \n");
+			print_error("Error\nInvalid wall\n");
 			free_game(game);
 			exit(1);
 		}
@@ -38,7 +38,7 @@ void	valid_midell_wall(t_game *game, int i, int j, int size_j)
 	{
 		if ((j == 0 || j == size_j - 1) && map[i][j] != '1')
 		{
-			print_error("Error : Invalid wall\n");
+			print_error("Error\nInvalid wall\n");
 			free_game(game);
 			exit(1);
 		}
@@ -93,7 +93,7 @@ void	valide(t_game *game)
 			if ((map[i][j] != '0') && (map[i][j] != '1') && (map[i][j] != 'E')
 				&& (map[i][j] != 'P') && (map[i][j] != 'C'))
 			{
-				print_error("Error : Bad character in map\n");
+				print_error("Error\nBad character in map\n");
 				free_game(game);
 				exit(1);
 			}

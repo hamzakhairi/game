@@ -6,7 +6,7 @@
 /*   By: hkhairi <hkhairi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 16:28:44 by hkhairi           #+#    #+#             */
-/*   Updated: 2025/02/18 18:10:38 by hkhairi          ###   ########.fr       */
+/*   Updated: 2025/02/19 16:22:37 by hkhairi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,21 +27,17 @@ void check_name(char *str, char *str2)
         len_str2++;
     if (len_str < len_str2)
     {
-        print_error("Invalid name map\n");
+        print_error("Error\nInvalid name map\n");
         exit(1);
     }
     i = len_str - 1;
     j = len_str2 - 1;
     while (j >= 0)
-    {
-        if (str[i] != str2[j])
+        if (str[i--] != str2[j--])
         {
-            print_error("Invalid name map\n");
+            print_error("Error\nInvalid name map\n");
             exit(1);
         }
-        i--;
-        j--;
-    }
 }
 
 int	ft_close(t_game *game)
@@ -98,7 +94,7 @@ int	main(int argc, char *argv[])
 	game = malloc(sizeof(t_game));
 	if (!game)
 	{
-		print_error("Error: Memory allocation failed\n");
+		print_error("Erorr\nMemory allocation failed\n");
 		return (1);
 	}
 	bigen_game(game, argv[1]);

@@ -6,7 +6,7 @@
 /*   By: hkhairi <hkhairi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 16:05:00 by hkhairi           #+#    #+#             */
-/*   Updated: 2025/02/18 17:29:23 by hkhairi          ###   ########.fr       */
+/*   Updated: 2025/02/19 16:22:03 by hkhairi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ char	**read_map(char	*file)
 	fd = open(file, O_RDONLY);
 	if (fd == -1)
 	{
-		print_error("Error : opening file");
+		print_error("Erorr\nopening file\n");
 		return (NULL);
 	}
 	number = number_map(file);

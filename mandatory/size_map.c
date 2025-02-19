@@ -6,7 +6,7 @@
 /*   By: hkhairi <hkhairi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 17:51:34 by hkhairi           #+#    #+#             */
-/*   Updated: 2025/02/18 18:11:40 by hkhairi          ###   ########.fr       */
+/*   Updated: 2025/02/19 16:22:24 by hkhairi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ t_map size_map(t_game *game)
     map_s.j = 0;
     if (!game || !game->map)
     {
-        print_error("Error: game or game->map is NULL\n");
+        print_error("Erorr\ngame or game->map is NULL\n");
         return (map_s);
     }
     map = game->map;
@@ -38,14 +38,14 @@ t_map size_map(t_game *game)
     while (map[map_s.i])
     {
         if (map[map_s.i][0] == '\0')
-            handel_error_size(game, "Error : empty line found\n");
+            handel_error_size(game, "Erorr\nempty line found\n");
         map_s.j = 0;
         while (map[map_s.i][map_s.j])
             map_s.j++;
         if (prev == 0)
             prev = map_s.j;
         else if (prev != map_s.j)
-            handel_error_size(game, "Error : map is not rectongle\n");
+            handel_error_size(game, "Erorr\nmap is not rectongle\n");
         map_s.i++;
     }
     return (map_s);

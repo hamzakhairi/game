@@ -6,7 +6,7 @@
 /*   By: hkhairi <hkhairi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 12:10:22 by hkhairi           #+#    #+#             */
-/*   Updated: 2025/02/18 17:26:42 by hkhairi          ###   ########.fr       */
+/*   Updated: 2025/02/19 16:05:31 by hkhairi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,6 @@ void	draw_move_counter(t_game *game)
 void	handle_exit(t_game	*game)
 {
 	print_error("You win!\n");
-	mlx_string_put(game->mlx, game->win, game->map_width * TILE_SIZE / 2 - 50,
-		game->map_height * TILE_SIZE / 2, 0x00FF00, "You win!");
-	mlx_do_sync(game->mlx);
 	free_game(game);
 	exit(0);
 }
