@@ -6,7 +6,7 @@
 /*   By: hkhairi <hkhairi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 13:46:13 by hkhairi           #+#    #+#             */
-/*   Updated: 2025/02/19 16:21:13 by hkhairi          ###   ########.fr       */
+/*   Updated: 2025/02/19 20:10:29 by hkhairi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,7 @@ void	valid_first_wall_and_last_wall(t_game *game, int i, int j)
 	while (map[i][j])
 	{
 		if (map[i][j] != '1')
-		{
-			print_error("Erorr\nInvalid wall\n");
-			free_game(game);
-			exit(1);
-		}
+			free_one(game, "Erorr\nInvalid wall\n");
 		j++;
 	}
 }
@@ -37,11 +33,7 @@ void	valid_midell_wall(t_game *game, int i, int j, int size_j)
 	while (map[i][j])
 	{
 		if ((j == 0 || j == size_j - 1) && map[i][j] != '1')
-		{
-			print_error("Erorr\nInvalid wall\n");
-			free_game(game);
-			exit(1);
-		}
+			free_one(game, "Erorr\nInvalid wall\n");
 		j++;
 	}
 }
@@ -93,11 +85,7 @@ void	valide(t_game *game)
 			if ((map[i][j] != '0') && (map[i][j] != '1') && (map[i][j] != 'E')
 				&& (map[i][j] != 'P') && (map[i][j] != 'C')
 				&& (map[i][j] != 'M'))
-			{
-				print_error("Erorr\nBad character\n");
-				free_game(game);
-				exit(1);
-			}
+				free_one(game, "Error\nBad character in map\n");
 			j++;
 		}
 		i++;

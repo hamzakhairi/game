@@ -6,11 +6,17 @@
 /*   By: hkhairi <hkhairi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 19:07:09 by hkhairi           #+#    #+#             */
-/*   Updated: 2025/02/19 16:20:39 by hkhairi          ###   ########.fr       */
+/*   Updated: 2025/02/19 20:15:22 by hkhairi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+void	handel_failed_check_name(char *str)
+{
+	print_error(str);
+	exit(1);
+}
 
 void	check_width_and_height(t_game *game, t_map	size_map)
 {
@@ -20,17 +26,9 @@ void	check_width_and_height(t_game *game, t_map	size_map)
 	width = size_map.j;
 	height = size_map.i;
 	if ((width * 32 > 3200) || (width * 32 == 0))
-	{
-		print_error("Erorr\nmap is so long\n");
-		free_game(game);
-		exit(1);
-	}
+		free_one(game, "Erorr\nmap is so long\n");
 	if ((height * 32 > 1720) || (height * 32 == 0))
-	{
-		print_error("Erorr\nmap is so long\n");
-		free_game(game);
-		exit(1);
-	}
+		free_one(game, "Erorr\nmap is so long\n");
 }
 
 void	add_one(t_valid *sume, char c)
@@ -74,11 +72,7 @@ void	validate_component_map(t_game *game)
 
 	sume = (t_valid *)malloc(sizeof(t_valid));
 	if (!sume)
-	{
-		print_error("Erorr\nMemory allocation failed!\n");
-		free_game(game);
-		exit(1);
-	}
+		free_one(game, "Erorr\nMemory allocation failed!\n");
 	sume->wall = 0;
 	sume->space = 0;
 	sume->exit = 0;
@@ -88,11 +82,6 @@ void	validate_component_map(t_game *game)
 	get_number(sume, game->map);
 	if (sume->wall < 1 || sume->player != 1 || sume->collectibl < 1
 		|| sume->exit != 1 || sume->space < 1 || sume->enemy < 1)
-	{
-		print_error("Erorr\nInvalid component in map!\n");
-		free(sume);
-		free_game(game);
-		exit(1);
-	}
+		free_tow(sume, game, "Erorr\nInvalid component in map!\n");
 	free(sume);
 }

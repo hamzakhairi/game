@@ -6,7 +6,7 @@
 /*   By: hkhairi <hkhairi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 16:03:34 by hkhairi           #+#    #+#             */
-/*   Updated: 2025/02/19 10:11:06 by hkhairi          ###   ########.fr       */
+/*   Updated: 2025/02/19 20:06:53 by hkhairi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,5 +113,9 @@ void	put_nbr(int nbr);
 void	print_error(char	*str);
 void	draw_move_counter(t_game *game);
 void	check_width_and_height(t_game *game, t_map	size_map);
+void	handel_failed_check_name(char *str);
+void	handel_error_init_enemies(t_game *game, char *str);
+void	free_one(t_game	*game, char *str);
+void	free_tow(t_valid	*sume, t_game	*game, char *str);
 
 #endif

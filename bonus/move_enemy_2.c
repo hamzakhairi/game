@@ -6,7 +6,7 @@
 /*   By: hkhairi <hkhairi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 16:47:58 by hkhairi           #+#    #+#             */
-/*   Updated: 2025/02/19 16:19:00 by hkhairi          ###   ########.fr       */
+/*   Updated: 2025/02/19 18:22:02 by hkhairi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,18 +70,11 @@ static void	init_enemies(t_game *game, int enemy_count)
 	int	j;
 
 	if (enemy_count <= 0)
-	{
-		print_error("Error\nNo enemies to initialize\n");
-		free_game(game);
-		exit(1);
-	}
+		handel_error_init_enemies(game, "Error\nNo enemies to initialize\n");
 	game->arr_enemy = (t_enemy *)malloc(enemy_count * sizeof(t_enemy));
 	if (!game->arr_enemy)
-	{
-		print_error("Error\nFailed to allocate memory for enemies\n");
-		free_game(game);
-		exit(1);
-	}
+		handel_error_init_enemies(game,
+			"Error\nFailed to allocate memory for enemies\n");
 	game->num_enemies = enemy_count;
 	i = 0;
 	index = 0;

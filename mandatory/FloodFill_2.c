@@ -6,7 +6,7 @@
 /*   By: hkhairi <hkhairi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 14:36:15 by hkhairi           #+#    #+#             */
-/*   Updated: 2025/02/19 16:12:01 by hkhairi          ###   ########.fr       */
+/*   Updated: 2025/02/19 20:21:56 by hkhairi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,5 @@ int	check_copy_map(char **map, int row)
 void	cheack_player(int x, int y, t_game *game)
 {
 	if (x == -1 && y == -1)
-	{
-		print_error("Error\nPlayer not found in the map.\n");
-		free_game(game);
-		exit(1);
-	}
+		free_one(game, "Error\nPlayer not found in the map.\n");
 }
