@@ -6,7 +6,7 @@
 /*   By: hkhairi <hkhairi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 15:38:48 by hkhairi           #+#    #+#             */
-/*   Updated: 2025/02/17 19:12:23 by hkhairi          ###   ########.fr       */
+/*   Updated: 2025/02/19 16:38:10 by hkhairi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ int	int_to_str_helper(int num, char *str)
 void	int_to_str(int num, char *str)
 {
 	int		i;
-	int		is_negative;
 	int		len;
 
 	i = 0;
@@ -52,15 +51,7 @@ void	int_to_str(int num, char *str)
 		str[i++] = '0';
 	else
 	{
-		if (num < 0)
-			is_negative = 1;
-		else
-			is_negative = 0;
-		if (is_negative)
-			num = -num;
 		len = int_to_str_helper(num, str);
-		if (is_negative)
-			str[len++] = '-';
 		reverse_str(str, len);
 		i = len;
 	}
