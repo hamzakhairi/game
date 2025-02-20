@@ -6,7 +6,7 @@
 /*   By: hkhairi <hkhairi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 19:07:09 by hkhairi           #+#    #+#             */
-/*   Updated: 2025/02/19 20:15:22 by hkhairi          ###   ########.fr       */
+/*   Updated: 2025/02/20 10:47:57 by hkhairi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ void	check_width_and_height(t_game *game, t_map	size_map)
 
 	width = size_map.j;
 	height = size_map.i;
-	if ((width * 32 > 3200) || (width * 32 == 0))
+	if (width * 32 > 3200)
 		free_one(game, "Erorr\nmap is so long\n");
-	if ((height * 32 > 1720) || (height * 32 == 0))
+	if (height * 32 > 1800)
 		free_one(game, "Erorr\nmap is so long\n");
 }
 
