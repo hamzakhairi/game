@@ -6,12 +6,12 @@
 #    By: hkhairi <hkhairi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/16 21:13:11 by hkhairi           #+#    #+#              #
-#    Updated: 2025/02/20 10:59:37 by hkhairi          ###   ########.fr        #
+#    Updated: 2025/02/20 11:26:28 by hkhairi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -fsanitize=address -g -I.
+CFLAGS = -Wall -Wextra -Werror -I.
 #-fsanitize=address -g
 MLX_DIR = ./minilibx-linux
 MLX = -L$(MLX_DIR) -lmlx -lXext -lX11
