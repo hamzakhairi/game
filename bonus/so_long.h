@@ -6,7 +6,7 @@
 /*   By: hkhairi <hkhairi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 16:03:34 by hkhairi           #+#    #+#             */
-/*   Updated: 2025/02/19 20:06:53 by hkhairi          ###   ########.fr       */
+/*   Updated: 2025/02/20 11:28:26 by hkhairi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,8 @@
 # include "../minilibx-linux/mlx.h"
 # include "./get_next_line.h"
 # include <stdlib.h>
-# include <stdio.h>
 # include <fcntl.h>
 # include <unistd.h>
-# include <string.h>
 
 # define TILE_SIZE 32
 
